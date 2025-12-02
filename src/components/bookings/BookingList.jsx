@@ -181,7 +181,7 @@ export const BookingList = () => {
                         className="btn btn-small btn-secondary"
                         onClick={() => handleEdit(booking)}
                       >
-                        Edit
+                        ✏️ Edit
                       </button>
                       <button
                         className="btn btn-small btn-danger"

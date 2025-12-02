@@ -38,6 +38,7 @@
 .guests-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 700px; /* Prevent table from squishing on mobile */
 }
 
 .guests-table thead {
@@ -63,6 +64,7 @@
 .actions {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .btn-small {
@@ -87,4 +89,55 @@
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
+}
+
+/* =============================
+      📱 RESPONSIVE DESIGN 
+============================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .list-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-small {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .list-header h2 {
+    font-size: 22px;
+  }
+
+  .guests-table-container {
+    padding: 5px;
+  }
+
+  .btn-small {
+    width: 100%;
+  }
+
+  .actions {
+    gap: 6px;
+  }
 }
