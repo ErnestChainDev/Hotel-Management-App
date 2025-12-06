@@ -12,35 +12,20 @@ function App() {
   const [activeSection, setActiveSection] = useState('/');
 
   return (
-    <div className={`App ${activeSection === '/' ? 'landing-bg' : 'main-bg'}`}>
+    <div className="App background-image">
 
-      {/* Landing Page */}
-      {activeSection === '/' && (
-        <LandingPage setActiveSection={setActiveSection} />
-      )}
+      {/* Show LandingPage only when activeSection is "/" */}
+      {activeSection === '/' && <LandingPage setActiveSection={setActiveSection} />}
 
-      {/* Navigation + Content */}
+      {/* Show navigation + pages if NOT landing page */}
       {activeSection !== '/' && (
         <>
-          <Navigation
-            activeSection={activeSection}
-            setActiveSection={setActiveSection}
-          />
+          <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
 
           <main className="main-content">
-
-            {activeSection === 'rooms' && (
-              <RoomList />
-            )}
-
-            {activeSection === 'guests' && (
-              <GuestList />
-            )}
-
-            {activeSection === 'bookings' && (
-              <BookingList />
-            )}
-
+            {activeSection === 'rooms' && <RoomList />}
+            {activeSection === 'guests' && <GuestList />}
+            {activeSection === 'bookings' && <BookingList />}
           </main>
         </>
       )}
